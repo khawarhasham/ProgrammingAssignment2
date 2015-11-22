@@ -1,5 +1,8 @@
 ## Put comments here that give an overall description of what your
 ## functions do
+# in order to compute the inverse of the given matrix, following two functions are implemented.
+# Since inverse calculation can be a compute-intensive process, it is better to cache the results for future usage.
+# The following two functions help in achieving this functionality.
 
 ## Write a short comment describing this function
 # In this function following activities are performed.
@@ -29,7 +32,7 @@ cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
   inv <- x$getinverse()
   if(!is.null(inv)) {
-    message("getting cached data.")
+    message("returning data from cache.")
     return(inv)
   }
   data <- x$get()
