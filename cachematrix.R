@@ -1,10 +1,10 @@
 ## Put comments here that give an overall description of what your
-## functions do
+## functions do.
 # in order to compute the inverse of the given matrix, following two functions are implemented.
 # Since inverse calculation can be a compute-intensive process, it is better to cache the results for future usage.
 # The following two functions help in achieving this functionality.
 
-## Write a short comment describing this function
+## Write a short comment describing this function.
 # In this function following activities are performed.
 # set<-function sets the value of matrix.
 # get<-function returns the matrix.
@@ -23,9 +23,9 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
-# this function calculates and returns the inverse of matrix.
-# in doing so, it first check if the inverse is already computed and is available in cache.
+## Write a short comment describing this function.
+# This function calculates and returns the inverse of matrix.
+# In doing so, it first checks if the matrix inverse is already computed and is available in the cache.
 # This check is performed using is.null(inv). If there is inverse available, it returns the inv variable.
 # Otherwise, it gets the matrix, calculates the inverse and store it in cache using setinverse, and returns the result i.e. inv at the end.
 cacheSolve <- function(x, ...) {
