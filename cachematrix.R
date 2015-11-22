@@ -12,13 +12,20 @@
 # getinverse function is used to return the value of matrix inverse previously set using setinverse.
 makeCacheMatrix <- function(x = matrix()) {
   inv <- NULL
+  
+  #set function
   set <- function(y) {
     x <<- y
     inv <<- NULL
   }
+  #get function
   get <- function() x
+  
+  #functions to set and get inverse
   setinverse <- function(inverse) inv <<- inverse
   getinverse <- function() inv
+  
+  #exposed functions
   list(set=set, get=get, setinverse=setinverse, getinverse=getinverse)
 }
 
@@ -29,14 +36,21 @@ makeCacheMatrix <- function(x = matrix()) {
 # This check is performed using is.null(inv). If there is inverse available, it returns the inv variable.
 # Otherwise, it gets the matrix, calculates the inverse and store it in cache using setinverse, and returns the result i.e. inv at the end.
 cacheSolve <- function(x, ...) {
-        ## Return a matrix that is the inverse of 'x'
+  
+  #first check if inverse available
   inv <- x$getinverse()
   if(!is.null(inv)) {
     message("returning data from cache.")
     return(inv)
   }
+  
+  #calculate inverse
   data <- x$get()
   inv <- solve(data)
+  
+  #set the matrix inverse in cache
   x$setinverse(inv)
+  
+  #return inv value
   inv
 }
